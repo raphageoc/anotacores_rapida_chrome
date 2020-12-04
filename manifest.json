@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+
+  "name": "Anotacões rápidas",
+  "description": "Permite criar e ler anotações",
+  "version": "1.0",
+  "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "browser_action": {
+     "default_icon": "icon.png"
+   },
+
+  "content_scripts": [{
+    "matches": ["https://*/*","file:///*","http://*/*"],
+    "js": ["myscript.js"],
+    "run_at": "document_idle"
+  }],
+"web_accessible_resources":["icons8.png","nicEditIcons-latest.gif"],
+  "permissions": [
+    "contextMenus",
+     "management",
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "storage",
+    "http://200.17.225.171/*"
+  ]
+}
